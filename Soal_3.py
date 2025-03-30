@@ -1,14 +1,13 @@
 #Soal 3
-class persegi:
-  def __init__(self, sisi):
-    self.sisi = int(sisi)
+def add_greeting(cls):
+  def greeting(self):
+    print(f"Hello, I am a {self.__class__.__name__}!")
+  cls.greeting = greeting
+  return cls
 
-  def luas(self):
-    return (self.sisi**2)
+@add_greeting
+class MyClass():
+  pass
 
-  def keliling(self):
-    return (self.sisi*4)
-
-n = int(input("Masukkan sisi Persegi: "))
-print("Luas Persegi:", persegi(n).luas())
-print("Keliling Persegi:", persegi(n).keliling())
+obj = MyClass()
+obj.greeting()
