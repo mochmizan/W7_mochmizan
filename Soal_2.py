@@ -1,11 +1,13 @@
 #Soal 2
-class hp:
-  def __init__(self, merek, nama, ram):
-    self.merek = merek
-    self.nama = nama
-    self.ram = ram
+class Person:
+  sehat = False
 
-infinix11 = hp("INFINIX", "INFINIX HOT 11S", 8)
-print("Nama HP  :", infinix11.nama)
-print("Merek    :", infinix11.merek)
-print("RAM      :", infinix11.ram, "GB")
+  def dinyatakan_sehat(self):
+    self.sehat = True
+
+joni = Person()
+eko = Person()
+
+joni.dinyatakan_sehat()
+print("Joni sehat: ", joni.sehat) # nilai terbarui
+print("Eko sehat: ", eko.sehat) # nilai default
