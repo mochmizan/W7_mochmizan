@@ -1,19 +1,15 @@
 #Soal 4
-class Shark:
-  def __init__(self, name):
-    self.name = name
+def inspeksi(func):
+    def inner_func():
+        print("fungsi ini akan dipanggil", func)
+        res = func()
+        print("fungsi telah selesai dieksekusi, nilai baliknya:", res)
+        return res
 
-  def swim(self):
-    print(self.name + " is swimming.")
+    return inner_func
 
-  def be_awesome(self):
-    print(self.name + " is being awesome.")
+@inspeksi
+def say_hello():
+    print("hello world")
 
-def main():
-  # Set name of Shark object
-  sammy = Shark("Sammy")
-  sammy.swim()
-  sammy.be_awesome()
-
-if __name__ == "__main__":
-  main()
+say_hello()
